@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Resume Builder</h1>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <form id="resume-form">
+                <h2>Personal Information</h2>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+                <label for="address">Address</label>
+                <textarea id="address" placeholder="Enter your address" rows="2"></textarea>
+
+                <!-- Dynamic Section Buttons -->
+                <button type="button" onclick="addSection('education')">Add Education</button>
+                <button type="button" onclick="addSection('experience')">Add Work Experience</button>
+                <button type="button" onclick="addSection('skills')">Add Skills</button>
+                <button type="button" onclick="addSection('projects')">Add Projects</button>
+                
+                <div id="dynamic-sections"></div>
+
+                <button type="button" onclick="generateResume()">Generate Resume</button>
+            </form>
+        </div>
+
+        <!-- Resume Preview Section -->
+        <div class="resume-section">
+            <h2>Your Resume</h2>
+            <div id="resume-preview">
+                <div id="preview-name"></div>
+                <div id="preview-email"></div>
+                <div id="preview-phone"></div>
+                <div id="preview-address"></div>
+                <div id="preview-dynamic-sections"></div>
+            </div>
+
+            <!-- Template Selection -->
+            <h3>Select a Template</h3>
+            <select id="template-selector" onchange="changeTemplate()">
+                <option value="default">Default Template</option>
+                <option value="modern">Modern Template</option>
+                <option value="minimal">Minimal Template</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
